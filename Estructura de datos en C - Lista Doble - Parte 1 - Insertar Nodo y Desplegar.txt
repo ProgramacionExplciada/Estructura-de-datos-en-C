@@ -1,22 +1,101 @@
-Estructura de datos en C - Lista Doble - Parte 1 - Insertar Nodo  y Desplegar
+#include <stdio.h>
+#include <conio.h>
 
-1.  Tutorial
-2.  Tutoriales
-3.  Programacion
-4.  Explicada
-5.  Estructura
-6.  Datos
-7.  Lista
-8.  Doble
-9.  Metodo
-10. Funcion
-11. Insertar
-12. Ingresar
-13. Agregar
-14. Desplegar
-15. Enlistar
-16. Recorrer
-17. Nodo
-18. Lenguaje c
-19. Estructura Datos
-20. Lista Doble
+typedef struct nodo{
+	int dato;
+	struct nodo* siguiente;
+	struct nodo* atras;
+}nodo;
+
+nodo* primero = NULL;
+nodo* ultimo = NULL;
+
+void insertarNodo();
+
+void desplegarListaPU();
+void desplegarListaUP();
+
+int main(){
+	insertarNodo();
+	insertarNodo();
+	insertarNodo();
+	insertarNodo();
+	insertarNodo();
+	printf("\n");
+	desplegarListaPU();
+	printf("\n");
+	desplegarListaUP();
+	return 0;
+}
+
+// 13, 16, 2, 9
+
+// primero = 13      ultimo = 9      nuevo = 9                            actual    =  null                                13    16   2  9
+ 
+// lista doble ------    NULL <- 13 -> <- 16 -> <- 2 -> <- 9 -> NULL        actual = null                                    9  2  16  13
+
+void insertarNodo(){
+	nodo* nuevo = (nodo*)malloc(sizeof(nodo));
+	printf(" Ingrese el dato que contendra el nuevo Nodo: ");
+	scanf("%d", &nuevo->dato);
+	
+	if(primero==NULL){
+		primero = nuevo;
+		primero->siguiente = NULL;
+		primero->atras = NULL;
+		ultimo = primero;
+	}else{
+		ultimo->siguiente = nuevo;
+		nuevo->siguiente = NULL;
+		nuevo->atras = ultimo;
+		ultimo = nuevo;
+	}
+
+	printf("\n Nodo ingresado con exito\n\n");
+}
+
+
+void desplegarListaPU(){
+	nodo* actual = (nodo*)malloc(sizeof(nodo));
+	actual = primero;
+	if(primero!=NULL){
+		while(actual != NULL){
+			printf("\n %d", actual->dato);
+			actual = actual->siguiente;
+		}
+	}else{
+		printf("\n La lista se encuentra vacia\n\n");
+	}
+}
+
+
+void desplegarListaUP(){
+	nodo* actual = (nodo*)malloc(sizeof(nodo));
+	actual = ultimo;
+	if(primero!=NULL){
+		while(actual != NULL){
+			printf("\n %d", actual->dato);
+			actual = actual->atras;
+		}
+	}else{
+		printf("\n La lista se encuentra vacia\n\n");
+	}	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
