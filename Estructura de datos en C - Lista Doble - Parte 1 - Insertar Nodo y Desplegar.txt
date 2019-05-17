@@ -1,0 +1,22 @@
+Estructura de datos en C - Lista Doble - Parte 1 - Insertar Nodo  y Desplegar
+
+1.  Tutorial
+2.  Tutoriales
+3.  Programacion
+4.  Explicada
+5.  Estructura
+6.  Datos
+7.  Lista
+8.  Doble
+9.  Metodo
+10. Funcion
+11. Insertar
+12. Ingresar
+13. Agregar
+14. Desplegar
+15. Enlistar
+16. Recorrer
+17. Nodo
+18. Lenguaje c
+19. Estructura Datos
+20. Lista Doble
